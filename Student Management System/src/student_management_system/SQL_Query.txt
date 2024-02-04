@@ -1,0 +1,8 @@
+show databases;
+create database UNIVERSITY_MANAGEMENT_SYSTEM;
+use UNIVERSITY_MANAGEMENT_SYSTEM;
+
+create table STUDENT (NAME varchar(50), FNAME varchar(50), ROLLNO varchar(50), PHONE varchar(50), EMAIL varchar(50), CLASS_X varchar(50), CLASS_XII varchar(50), SGPA varchar(50));
+
+select * from STUDENT;
+
