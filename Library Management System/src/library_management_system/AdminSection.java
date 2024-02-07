@@ -16,13 +16,29 @@ public class AdminSection extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        // LOCK IMAGE
+        // SIDE IMAGE
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Images/project.png"));
         Image i2 = i1.getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
-        JLabel image = new JLabel(i3);
-        image.setBounds(450, 30, 800, 600);
-        add(image);
+        JLabel image1 = new JLabel(i3);
+        image1.setBounds(450, 30, 800, 600);
+        add(image1);
+
+        // // READING IMAGE
+        // ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("Images/pic1.png"));
+        // Image i5 = i4.getImage().getScaledInstance(200, 300, Image.SCALE_DEFAULT);
+        // ImageIcon i6 = new ImageIcon(i5);
+        // JLabel image2 = new JLabel(i6);
+        // image2.setBounds(10, 310, 200, 300);
+        // add(image2);
+
+        // // BOOK IMAGE
+        // ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("Images/pic2.png"));
+        // Image i8 = i7.getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+        // ImageIcon i9 = new ImageIcon(i8);
+        // JLabel image3 = new JLabel(i9);
+        // image3.setBounds(450, 30, 800, 600);
+        // add(image3);
 
 
         // HEADING
