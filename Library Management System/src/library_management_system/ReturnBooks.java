@@ -37,7 +37,7 @@ public class ReturnBooks extends JFrame implements ActionListener{
         
         try {
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from issuebook");
+            ResultSet rs = c.s.executeQuery("select * from ISSUEBOOK");
             while(rs.next()) {
                 cbookno.add(rs.getString("bookno"));
             }
@@ -139,7 +139,7 @@ public class ReturnBooks extends JFrame implements ActionListener{
         
         try {
             Conn c = new Conn();
-            String query = "select * from issuebook where bookno='"+cbookno.getSelectedItem()+"'";
+            String query = "select * from ISSUEBOOK where bookno='"+cbookno.getSelectedItem()+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
                 labelbookno.setText(rs.getString("bookno"));
@@ -159,7 +159,7 @@ public class ReturnBooks extends JFrame implements ActionListener{
             public void itemStateChanged(ItemEvent ie) {
                 try {
                     Conn c = new Conn();
-                    String query = "select * from issuebook where bookno='"+cbookno.getSelectedItem()+"'";
+                    String query = "select * from ISSUEBOOK where bookno='"+cbookno.getSelectedItem()+"'";
                     ResultSet rs = c.s.executeQuery(query);
                     while(rs.next()) {
                         labelbookno.setText(rs.getString("bookno"));
@@ -231,9 +231,9 @@ public class ReturnBooks extends JFrame implements ActionListener{
             String due = labeldue.getText();
             
             try {
-                String query = "insert into returnbook values('"+passkey+"','"+bookno+"','"+bookname+"','"+name+"','"+rollno+"','"+issue+"','"+due+"')";
-                String query1  = "update addbook set quantity=quantity+1 where bookno='"+bookno+"'";
-                String query2 = "delete from issuebook where bookno='"+bookno+"'";
+                String query = "insert into RETURNBOOK values('"+passkey+"','"+bookno+"','"+bookname+"','"+name+"','"+rollno+"','"+issue+"','"+due+"')";
+                String query1  = "update ADDBOOK set quantity=quantity+1 where bookno='"+bookno+"'";
+                String query2 = "delete from ISSUEBOOK where bookno='"+bookno+"'";
                 Conn con = new Conn();
                 con.s.executeUpdate(query);
                 con.s.executeUpdate(query1);

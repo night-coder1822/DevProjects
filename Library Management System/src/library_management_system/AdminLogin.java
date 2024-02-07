@@ -66,7 +66,7 @@ public class AdminLogin extends JFrame implements ActionListener{
             String username = tfusername.getText();
             String password = tfpassword.getText();
             
-            String query = "select * from adminlogin where username='"+username+"' and password='"+password+"'";
+            String query = "select * from ADMINLOGIN where username='"+username+"' and password='"+password+"'";
             
             try {
                 Conn c = new Conn();

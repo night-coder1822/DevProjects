@@ -65,7 +65,7 @@ public class StudentLogin extends JFrame implements ActionListener{
             String username = tfusername.getText();
             String password = tfpassword.getText();
             
-            String query = "select * from adduser where username='"+username+"' and password='"+password+"'";
+            String query = "select * from ADDUSER where username='"+username+"' and password='"+password+"'";
             
             try {
                 Conn c = new Conn();

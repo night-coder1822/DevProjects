@@ -37,7 +37,7 @@ public class IssueBooks extends JFrame implements ActionListener{
         
         try {
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from adduser");
+            ResultSet rs = c.s.executeQuery("select * from ADDUSER");
             while(rs.next()) {
                 cpasskey.add(rs.getString("passkey"));
             }
@@ -57,7 +57,7 @@ public class IssueBooks extends JFrame implements ActionListener{
         
         try {
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from addbook");
+            ResultSet rs = c.s.executeQuery("select * from ADDBOOK");
             while(rs.next()) {
                 cbookno.add(rs.getString("bookno"));
             }
@@ -167,7 +167,7 @@ public class IssueBooks extends JFrame implements ActionListener{
         // 1st Item State change
         try {
             Conn c = new Conn();
-            String query = "select * from adduser where passkey='"+cpasskey.getSelectedItem()+"'";
+            String query = "select * from ADDUSER where passkey='"+cpasskey.getSelectedItem()+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
                 labelname.setText(rs.getString("name"));
@@ -183,7 +183,7 @@ public class IssueBooks extends JFrame implements ActionListener{
             public void itemStateChanged(ItemEvent ie) {
                 try {
                     Conn c = new Conn();
-                    String query = "select * from adduser where passkey='"+cpasskey.getSelectedItem()+"'";
+                    String query = "select * from ADDUSER where passkey='"+cpasskey.getSelectedItem()+"'";
                     ResultSet rs = c.s.executeQuery(query);
                     while(rs.next()) {
                         labelname.setText(rs.getString("name"));
@@ -201,7 +201,7 @@ public class IssueBooks extends JFrame implements ActionListener{
         
         try {
             Conn c = new Conn();
-            String query = "select * from addbook where bookno='"+cbookno.getSelectedItem()+"'";
+            String query = "select * from ADDBOOK where bookno='"+cbookno.getSelectedItem()+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
                 labelbookname.setText(rs.getString("booktitle"));
@@ -217,7 +217,7 @@ public class IssueBooks extends JFrame implements ActionListener{
             public void itemStateChanged(ItemEvent ie) {
                 try {
                     Conn c = new Conn();
-                    String query = "select * from addbook where bookno='"+cbookno.getSelectedItem()+"'";
+                    String query = "select * from ADDBOOK where bookno='"+cbookno.getSelectedItem()+"'";
                     ResultSet rs = c.s.executeQuery(query);
                     while(rs.next()) {
                         labelbookname.setText(rs.getString("booktitle"));
@@ -261,8 +261,8 @@ public class IssueBooks extends JFrame implements ActionListener{
             String due = ((JTextField) dcdue.getDateEditor().getUiComponent()).getText();
             
             try {
-                String query = "insert into issuebook values('"+passkey+"','"+name+"','"+bookno+"','"+booktitle+"','"+year+"','"+isbn+"','"+rollno+"','"+issue+"','"+due+"')";
-                String query1  = "update addbook set quantity=quantity-1 where bookno='"+bookno+"'";
+                String query = "insert into ISSUEBOOK values('"+passkey+"','"+name+"','"+bookno+"','"+booktitle+"','"+year+"','"+isbn+"','"+rollno+"','"+issue+"','"+due+"')";
+                String query1  = "update ADDBOOK set quantity=quantity-1 where bookno='"+bookno+"'";
                 Conn con = new Conn();
                 con.s.executeUpdate(query);
                 con.s.executeUpdate(query1);
